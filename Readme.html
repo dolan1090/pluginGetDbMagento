@@ -1,0 +1,20 @@
+Example 1:
+
+<block class="Magento\Framework\View\Element\Template" name="how.to.content" template="Magento_Catalog::product/howto.phtml" group="detailed_info"/>
+<block class="Magento\Catalog\Block\Product\View" name="how.to.content" template="Magento_Catalog::product/howto.phtml" group="detailed_info"/>
+
+$customGetRendererBlock = $block->getLayout()->createBlock('Ecentura\OptimateModule\Block\CustomGetRendererBlock');
+echo $elements = $customGetRendererBlock->getElements(...);
+
+==============================
+
+Example 2:
+
+<block class="Magento\Catalog\Block\Product\View" name="product.vendor.stock" template="Magento_Catalog::product/vendor_stock.phtml" group="detailed_info">
+    <arguments>
+        <argument name="view_model" xsi:type="object">Ecentura\OptimateModule\Block\CustomGetRendererViewModel</argument>
+    </arguments>
+</block>
+
+$viewModel = $block->getViewModel();
+echo $viewModel->getSomething();
